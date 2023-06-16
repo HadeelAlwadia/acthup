@@ -1,4 +1,4 @@
-import { IthemeAction } from '../../@types';
+import { IToggleThemeAction } from '../../@types';
 import { themeConstants } from '../constants/Theme.constants'
 const systemTheme=window.matchMedia("(prefers-color-scheme: dark)")?'dark':'light'
 const theme=localStorage.getItem('theme')||systemTheme
