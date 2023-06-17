@@ -4,8 +4,30 @@ import Home from "../screens/Home";
 import Error from '../screens/Error'
 
 const screensPath = [
-  { path: "/", element: <Home /> },
+  { path: "/", element: <div /> },
   { path: "*", element: <Error /> },
+  { path: "/courses", element: <div /> },
+  { path: "", element: <Error /> },
+  { path: "", element: <Error /> },
+  { path: "/", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+  { path: "*", element: <Error /> },
+
+
   
 ];
 
