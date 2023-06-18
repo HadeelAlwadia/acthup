@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom'
-import routers from './routes';
 import { ThemeProvider } from '@mui/material/styles';
 import { useSelector } from 'react-redux';
 import { AppState } from './store';
@@ -8,6 +7,7 @@ import { darkTheme, lightTheme } from './theme';
 import Header from './components/common/Header';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
+import RootRoutes from './routes/RootRoutes';
 function App() {
    const { theme, language } = useSelector((state: AppState) => state);
    useEffect(() => { localStorage.setItem('theme', theme); 
@@ -17,7 +17,7 @@ function App() {
          <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
             <I18nextProvider i18n={{...i18n,language:language}}>
             <Header />
-            <RouterProvider router={routers} />
+            <RouterProvider router={RootRoutes} />
             </I18nextProvider>
         
 

@@ -1,8 +1,8 @@
+import HellDescription from "../screens/HellDescription";
 
 
 const WorkSpaceAndOffice =[  
-    { path: "/workspaces&office", element: <div /> },
-{ path: "/workspaces/:id", element: <div /> }]
+{ path: "/workspaces&office/:id", element: <HellDescription /> }]
 export default WorkSpaceAndOffice;
 
 
