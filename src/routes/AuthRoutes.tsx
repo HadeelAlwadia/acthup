@@ -1,8 +1,8 @@
 import ChangePassword from "../screens/auth/ChangePassword";
 import ForgetPassword from "../screens/auth/ForgetPassword";
-import Login from "../screens/auth/Login";
 import SignUp from "../screens/auth/SignUp";
 import VerfactionCode from "../screens/auth/VerfactionCode";
+import Login from "../screens/auth/login";
 
 export const authRoutes = [
     { path: "/auth/login", element: <Login /> },
