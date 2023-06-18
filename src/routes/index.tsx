@@ -4,12 +4,11 @@ import Home from "../screens/Home";
 import Error from '../screens/Error'
 import Courses from "../screens/Courses";
 import CoursDetalies from "../screens/CoursDetalies";
-import Categories from "../screens/Categories";
-import Booking from "../screens/booking/Booking";
-import Login from "../screens/auth/login";
-import ForgetPassword from "../screens/auth/ForgetPassword";
-import OPT from "../screens/auth/OPT";
 import SignUp from "../screens/auth/SignUp";
+import Login from "../screens/auth/login";
+import OTP from "../screens/auth/OTP";
+import ForgetPassword from "../screens/auth/ForgetPassword";
+import Booking from "../screens/booking/Booking";
 
 const screensPath = [
   { path: "/", element: <Home /> },
@@ -19,9 +18,9 @@ const screensPath = [
   { path: "/user/Booking", element: <Booking /> },
   { path: "/login", element: <Login /> },
   { path: "/forgetpassword", element: <ForgetPassword /> },
-  { path: "/otp", element: <OPT /> },
+  { path: "/otp", element: <OTP /> },
   { path: "/signup", element: <SignUp /> },
-  { path: "", element: <div /> },
+  { path: "", element: <div /> }, 
   { path: "", element: <div /> },
   { path: "", element: <div /> },
   { path: "", element: <div /> },
