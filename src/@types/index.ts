@@ -7,7 +7,7 @@ export interface IToggleThemeAction {
   type: themeConstants.TOGGLE_THEME;
   payload:theme;
 }
-
+export type stringValue=string
 export interface IToggleLanguageAction {
     type: languageConstants.TOGGLE_LANGUAGE;
     payload:language;
