@@ -12,3 +12,24 @@ export interface IToggleLanguageAction {
     type: languageConstants.TOGGLE_LANGUAGE;
     payload:language;
   }
+
+interface IattributesCourse{
+  name	:	stringValue
+  description	:	stringValue
+  active	:	number
+  resource_id	:	number
+  hours	:	number
+  price	:	number
+  rate	:	number
+  avatar	:	stringValue
+  start_date	:	stringValue
+  end_date	:	stringValue
+}
+  export interface Icourse{
+    id	:	number
+isRated	:	boolean
+user_rate	:	number
+	attributes	:IattributesCourse
+  }
+
+
