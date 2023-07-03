@@ -8,26 +8,24 @@ import Header from './components/common/Header';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 import RootRoutes from './routes/RootRoutes';
-import { coursesActionsExcution } from './store/actions/courses.action';
+import Loading from './components/Loading';
 function App() {
-
+   
    const { theme, language,courses }=useSelector((state: AppState):AppState => state);
-   const dispatch=useDispatch();
    console.log(courses);
 
    useEffect(() => { 
       localStorage.setItem('theme', theme); 
    localStorage.setItem('lang', language);
-   //get courses data
-   coursesActionsExcution(dispatch);
+ 
  }, [theme, language])
 
    return (
-      <>
+
+      <>  
          <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
             <I18nextProvider i18n={{...i18n,language:language}}>
             <Header />
-            
             <RouterProvider router={RootRoutes} />
             </I18nextProvider>
          </ThemeProvider>

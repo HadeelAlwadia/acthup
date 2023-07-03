@@ -1,4 +1,3 @@
-import { AxiosError } from "axios"
 import { Api } from "../../api"
 import { constantsCourses } from "../constants/courses.constants"
 
