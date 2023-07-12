@@ -33,3 +33,39 @@ user_rate	:	number
   }
 
 
+
+  export interface Iresource{
+    id: number,
+    attributes: {
+      name: stringValue,
+      number_seats: number,
+      thumbnail_image:stringValue,
+      price_by_hour: number,
+      price_by_day: number,
+      price_by_weak  : number,
+      price_by_month: number
+    }}
+
+
+     export interface Icategory {
+      id: number,
+      attributes: {
+          name:stringValue ,
+          description:stringValue,
+          icon:stringValue ,
+          banner:stringValue
+      } }
+
+      
+     export interface Islider    {
+      id: number,
+      type:stringValue,
+      value:stringValue,
+      attributes: {
+        title:stringValue,
+        description:stringValue,
+        image:stringValue,
+        id:stringValue,
+        courseHours?:number
+      }
+  }

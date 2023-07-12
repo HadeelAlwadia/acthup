@@ -11,8 +11,7 @@ import RootRoutes from './routes/RootRoutes';
 import Loading from './components/Loading';
 function App() {
    
-   const { theme, language,courses }=useSelector((state: AppState):AppState => state);
-   console.log(courses);
+   const { theme, language }=useSelector((state: AppState):AppState => state);
 
    useEffect(() => { 
       localStorage.setItem('theme', theme); 

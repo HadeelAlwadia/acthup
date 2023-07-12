@@ -9,8 +9,8 @@ const Search = () => {
     setSearchValue(value)
   }
   return (
-    <SearchContineer>
-    <SearchIconWrapper>
+    <SearchContineer sx={{width:'700px'}}>
+       <SearchIconWrapper>
       <SearchIcon />
     </SearchIconWrapper>
     <StyledInputBase
@@ -19,7 +19,7 @@ const Search = () => {
       value={searchValue}
       onChange={(e)=>handleChangeSearchValue(e.target.value)}
     />
-    
+  
   </SearchContineer>
   )
 }

@@ -10,7 +10,7 @@ export interface  IcourseObject{
 }
 
 const courseObject:IcourseObject={
-    courseDetalies:{
+    courseDetalies:{ 
     id: 0,
     isRated: false,
     user_rate: 0,
@@ -40,10 +40,10 @@ export const courseDetaliesReducer=(initalState=courseObject,action:any)=>{
         return {...initalState,courseDetalies:action.payload,error:'',loading:false}
         break;
     } 
-    case  constantsCourseDetalies.FAIL_GET_COURSE_DETALIES:{
-        return {...initalState,error:action.payload,loading:false}
-        break;
-    } 
+    case  constantsCourseDetalies.FAIL_GET_COURSE_DETALIES:{return{
+        ...initalState,loading:false,error:action.payload
+    }
+break;}
     default:return initalState;
  }
 }
