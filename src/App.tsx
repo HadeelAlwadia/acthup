@@ -1,36 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect ,createContext} from 'react';
 import { RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material/styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from './store';
+import {useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from './theme';
-import Header from './components/common/Header';
-import { I18nextProvider } from 'react-i18next';
-import i18n from './i18n';
+import Header from './components/Common/Header';
 import RootRoutes from './routes/RootRoutes';
-import Loading from './components/Loading';
+import { AppState } from './redux/store';
+import Footer from './components/Common/Footer';
+import { storeDataInStorage } from './utils/functionlty';
+
+
 function App() {
-   
-   const { theme, language }=useSelector((state: AppState):AppState => state);
+   const storeProvilder=createContext({
+      
+   })
+   const { theme} = useSelector((state: AppState): AppState => state);
 
-   useEffect(() => { 
-      localStorage.setItem('theme', theme); 
-   localStorage.setItem('lang', language);
- 
- }, [theme, language])
-
+   useEffect(() => {
+      storeDataInStorage('theme', theme);
+   }, [theme])
    return (
-
-      <>  
-         <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-            <I18nextProvider i18n={{...i18n,language:language}}>
-            <Header />
+      <storeProvilder.Provider value={{courses:[]}}>
+         <ThemeProvider theme={theme === 'dark'?darkTheme:lightTheme }>
+          <Header />
             <RouterProvider router={RootRoutes} />
-            </I18nextProvider>
+         <Footer/>
          </ThemeProvider>
-      </>
+      </storeProvilder.Provider>
    );
-}
+} 
+export default App;
 
-export default App; 
-
+ 

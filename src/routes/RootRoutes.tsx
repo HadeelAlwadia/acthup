@@ -8,10 +8,10 @@ import CatergoyRoutes from "./CatergoyRoutes";
 import CourseRoutes from "./CourseRoutes";
 import WorkSpaceAndOffice from "./WorkSpace&OfficeRoutes";
 import Search from "../screens/Search";
-import Notifaction from "../screens/user/Notifaction";
+import Notifaction from "../screens/User/Notifaction";
 
 const basicRoutes = [{ path: "/", element: <Home /> },
-{ path: "/seach/:nameOfSearch", element: <Search /> },
+{ path: `/search/:searchWord`, element: <Search /> },
 { path: "*", element: <Error /> },    { path: "/notifactions", element: <Notifaction/> },
 ]
 

@@ -1,15 +1,11 @@
-import { Icourse } from "../../@types";
+import { createSlice } from "@reduxjs/toolkit";
+import { CourseObject } from "../../@types";
 import { constantsCourseDetalies } from "../constants/courseDetalies.constants";
 
 
 
-export interface  IcourseObject{
-    loading:boolean,
-    courseDetalies:Icourse,
-    error:string,
-}
 
-const courseObject:IcourseObject={
+const courseObject:CourseObject={
     courseDetalies:{ 
     id: 0,
     isRated: false,
@@ -18,13 +14,13 @@ const courseObject:IcourseObject={
         name: "",
         description: "",
         active: 0,
-        resource_id: 0,
         hours: 0,
         price: 0,
         rate: 0,
         avatar: "",
         start_date: "",
-        end_date: ""
+        end_date: "",
+        resource_id: 0
     }
 },
 error:'',
@@ -47,3 +43,8 @@ break;}
     default:return initalState;
  }
 }
+
+/*
+const coursDelaiesSlices=createSlice('',{},reducer:{
+    get
+})/*/

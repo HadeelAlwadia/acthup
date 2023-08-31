@@ -1,33 +1,34 @@
 import { Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { Islider } from '../../../@types';
-import { MoveBtnContineer, Slide, SlideImage ,SliderContineer} from './Slider.style';
-import {ArrowBackIos,ArrowForwardIos} from '@mui/icons-material';
-const Slider = ({ Sliders }:{Sliders:Islider[]}) => {
+import { SliderData } from '../../../@types';
+import { MoveBtn, MoveBtnContineer, Slide, SlideImage ,SliderContineer} from './Slider.style';
+const Slider = ({ sliders }:{sliders:SliderData[]}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
-    setCurrentIndex(currentIndex === 0 ? Sliders.length - 1 : currentIndex - 1);
+    setCurrentIndex(currentIndex === 0 ? sliders.length - 1 : currentIndex - 1);
   };
 
   const goToNext = () => {
-    setCurrentIndex(currentIndex === Sliders.length - 1 ? 0 : currentIndex + 1);
+    setCurrentIndex(currentIndex === sliders.length - 1 ? 0 : currentIndex + 1);
   };
 
   return (
-    <div>
+    <div key={String(sliders[currentIndex].attributes.id)}>
       <SliderContineer>
-      <SlideImage src={Sliders[currentIndex].attributes.image} alt="Slider Image" />
+      <SlideImage src={sliders[currentIndex].attributes.image} alt="Slider Image" />
       <Slide>
-      <Typography color={'white'}>{Sliders[currentIndex].attributes.title} </Typography>
-      <Typography color='white'>{Sliders[currentIndex].attributes.description}</Typography>
-      <Typography color='white'>{Sliders[currentIndex].attributes.courseHours}</Typography>
-      </Slide>
+      <Typography color={'white'}>{sliders[currentIndex].attributes.title} </Typography>
+      <Typography color='white'>{sliders[currentIndex].attributes.description}</Typography>
+      <Typography color='white'>{sliders[currentIndex].attributes.courseHours}</Typography>
       <MoveBtnContineer>
         
-      <ArrowBackIos onClick={goToPrevious}>Previous</ArrowBackIos>
-      <ArrowForwardIos onClick={goToNext}>Next</ArrowForwardIos>
+      <MoveBtn onClick={goToPrevious}></MoveBtn>
+      <MoveBtn onClick={goToPrevious}></MoveBtn>
+      <MoveBtn onClick={goToNext}></MoveBtn>
       </MoveBtnContineer>
+      </Slide>
+
       
       </SliderContineer>
 

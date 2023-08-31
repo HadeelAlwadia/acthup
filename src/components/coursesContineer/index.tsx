@@ -1,20 +1,26 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import { AppState } from '../../redux/store';
-import Course from './Course';
-import { Icourse } from '../../@types';
-import { Grid } from '@mui/material';
+import Course from './Course'
+import { CourseData } from '../../@types'
+import Collections from '../Layout/collections'
 
-const CoursesContineer = () => {
-  const {courses}=useSelector((state:AppState)=>state.courses)
+const CoursesContineer = ({ courses }: { courses: CourseData[] }) => {
   return (
-    <Grid container spacing={{ xs: 5, md: 3 }} columns={{ xs: 1, sm: 1, md: 2 }} margin={'20px'}>
-    {courses.map((course:Icourse) => (<Course course={course} key={course.id}/>))}
+    <Collections
+      name={'courses'}
+      sx={{}}
 
-</Grid>
-
+      sxChildern={{margin:'20px auto',width:"75%",gridTemplateColumns:'auto auto auto'}} 
+            childern={
+        <>
+          {courses.map((course: CourseData) => (
+            <Course {...course}
+              key={course.id}
+            />
+          ))}
+        </>
+      }
+    />
   )
 }
 
-export default CoursesContineer;
-
+export default CoursesContineer

@@ -11,8 +11,7 @@ export const generalDataActionsExcution=async(dispatch:any)=>{
     dispatch(generalDataActions.startGetGeneralData())
        try{
         const {data}=(await Api.get('/home'));
-
-        dispatch(generalDataActions.successGetGeneralData(data))
+        dispatch(generalDataActions.successGetGeneralData(data));
        } catch(error:any){
         dispatch(generalDataActions.failGetGeneralData(error?.response?.data?.message || error.message))
        }

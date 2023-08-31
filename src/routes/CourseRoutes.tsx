@@ -1,5 +1,5 @@
-import CoursDetalies from "../screens/courses/CourseDetalies";
-import Courses from "../screens/courses/Courses";
+import CoursDetalies from "../screens/Courses/CourseDetalies";
+import Courses from "../screens/Courses";
 
 const CourseRoutes = [
     { path: "/courses", element: <Courses /> },

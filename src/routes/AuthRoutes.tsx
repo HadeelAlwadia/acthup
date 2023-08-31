@@ -1,13 +1,14 @@
-import ChangePassword from "../screens/auth/ChangePassword";
-import ForgetPassword from "../screens/auth/ForgetPassword";
-import SignUp from "../screens/auth/SignUp";
-import VerfactionCode from "../screens/auth/VerfactionCode";
-import Login from "../screens/auth/login";
+import ResetPassword from "../screens/Auth/ResetPassword";
+import SignUp from "../screens/Auth/SignUp";
+import Login from "../screens/Auth/login";
+import VerifiedEmail from "../screens/Auth/verifiedEmail";
 
 export const authRoutes = [
     { path: "/auth/login", element: <Login /> },
     { path: "/auth/signup", element: <SignUp/> },
-    { path: "/auth/forget--password", element: <ForgetPassword /> },
-    { path: "/auth/changepassword", element: <ChangePassword /> },
-    { path: '/auth/verfaction-code', elemant: <VerfactionCode /> }
+    { path: '/auth/verifiedemail', element: <VerifiedEmail /> },
+    { path: '/auth/resetpassword', element: <ResetPassword /> }
+
+    
+    
 ]

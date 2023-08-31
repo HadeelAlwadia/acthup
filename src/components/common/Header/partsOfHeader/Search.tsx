@@ -9,7 +9,11 @@ const Search = () => {
     setSearchValue(value)
   }
   return (
-    <SearchContineer sx={{width:'700px'}}>
+    <SearchContineer action={`./search`} onSubmit={(e)=>{
+e.preventDefault();
+window.location.href=`/search/${searchValue}`
+
+    }}  >
        <SearchIconWrapper>
       <SearchIcon />
     </SearchIconWrapper>
@@ -17,6 +21,7 @@ const Search = () => {
       placeholder="Search…"
       inputProps={{ 'aria-label': 'search' }}
       value={searchValue}
+      name='word'
       onChange={(e)=>handleChangeSearchValue(e.target.value)}
     />
   
