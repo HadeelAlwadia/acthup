@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { useEffect ,createContext} from 'react';
+import { RouterProvider } from 'react-router-dom'
+import { ThemeProvider } from '@mui/material/styles';
+import {useSelector } from 'react-redux';
+import { darkTheme, lightTheme } from './theme';
+import Header from './components/Common/Header';
+import RootRoutes from './routes/RootRoutes';
+import { AppState } from './redux/store';
+import Footer from './components/Common/Footer';
+import { storeDataInStorage } from './utils/functionlty';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+   const { theme} = useSelector((state: AppState): AppState => state);
+
+   useEffect(() => {
+      storeDataInStorage('theme', theme);
+   }, [theme])
+   return (
+      <>
+         <ThemeProvider theme={theme === 'dark'?darkTheme:lightTheme }>
+          <Header />
+            <RouterProvider router={RootRoutes} />
+         <Footer/>
+         </ThemeProvider>
+      </>
+   );
+} 
 export default App;
+
+ 

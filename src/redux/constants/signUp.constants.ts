@@ -1,0 +1,6 @@
+export const signUpConstants={
+    START_SIGNUP:'START_SIGNUP',
+    SUCCESS_SIGNUP:'SUCCESS_SIGNUP',
+    FAIL_SIGNUP:'FAIL_SIGNUP'
+
+}
